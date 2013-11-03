@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# Script taken from https://gist.github.com/burke/5066634/. thnx
+
 Dir.chdir("/opt/boxen") do
 
   File.open(File.expand_path("~/.config/fish/boxen.fish"), "w") do |f|
