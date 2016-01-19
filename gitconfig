@@ -3,22 +3,14 @@
   email = fredrik@valdmanis.com
 
 [alias]
-	ci = commit
-	st = status
+  ci = commit
+  st = status
   df = diff
   co = checkout
   ls = log --branches --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [color]
-	ui = true
+  ui = true
 
-[credential]
-  helper = /opt/boxen/bin/boxen-git-credential
-
-[core]
-  excludesfile = /opt/boxen/config/git/gitignore
-
-[hub]
-  protocol = https
 [push]
-	default = simple
+  default = simple
