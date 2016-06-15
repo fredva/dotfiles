@@ -4,7 +4,7 @@
 
 [alias]
   ci = commit
-  st = status
+  st = status -sb
   df = diff
   co = checkout
   ls = log --branches --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
