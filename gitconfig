@@ -17,3 +17,5 @@
 
 [diff]
   compactionHeuristic = true
+[core]
+	editor = /usr/local/bin/vim
