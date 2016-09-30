@@ -85,6 +85,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-if [ -f $HOME/digipost/config.sh ]; then
-    source $HOME/digipost/config.sh
+alias p=python
+
+if [ -f $HOME/.digipostrc ]; then
+    source $HOME/.digipostrc
+fi
+if [ -f $HOME/.githubrc ]; then
+    source $HOME/.githubrc
 fi
