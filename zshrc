@@ -1,4 +1,14 @@
 export USER=fredrik
+
+if [ -f $HOME/.digipostrc ]; then
+    source $HOME/.digipostrc
+fi
+if [ -f $HOME/.githubrc ]; then
+    source $HOME/.githubrc
+fi
+
+setopt PROMPT_SUBST
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +18,7 @@ export ZSH=/Users/fredrik/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="fredrik"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -46,13 +56,13 @@ ZSH_THEME="robbyrussell"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx brew brew-cask)
+plugins=(git osx brew brew-cask mvn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,9 +97,3 @@ source $ZSH/oh-my-zsh.sh
 #
 alias p=python
 
-if [ -f $HOME/.digipostrc ]; then
-    source $HOME/.digipostrc
-fi
-if [ -f $HOME/.githubrc ]; then
-    source $HOME/.githubrc
-fi
