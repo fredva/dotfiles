@@ -1,21 +1,21 @@
 [user]
-  name = Fredrik Valdmanis
-  email = fredrik@valdmanis.com
+    name = Fredrik Valdmanis
+    email = fredrik@valdmanis.com
 
 [alias]
-  ci = commit
-  st = status -sb
-  df = diff
-  co = checkout
-  ls = log --branches --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ci = commit
+    st = status -sb
+    df = diff
+    co = checkout
+    ls = log --branches --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [color]
-  ui = true
+    ui = true
 
 [push]
-  default = simple
+    default = simple
 
 [diff]
-  compactionHeuristic = true
+    compactionHeuristic = true
 [core]
-	editor = /usr/local/bin/vim
+    editor = /usr/local/bin/vim
