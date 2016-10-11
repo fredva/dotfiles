@@ -14,8 +14,11 @@
 
 [push]
     default = simple
+    followTags = true
 
 [diff]
     compactionHeuristic = true
 [core]
     editor = /usr/local/bin/vim
+[fetch]
+    prune = true
