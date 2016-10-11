@@ -1,6 +1,6 @@
 local ret_status="%(?:%{$fg_bold[green]%}➜:%{$fg_bold[red]%}➜)"
 function vpn() {
-    echo "%{$fg_bold[yellow]%}$(vpns Connecting)%{$reset_color%}%{$fg_bold[green]%}$(vpns Connected)"
+    echo "%{$reset_color%}%{$fg_bold[green]%}$(vpns Connected)"
 }
 PROMPT='${ret_status}$(vpn) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 
