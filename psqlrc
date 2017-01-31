@@ -1,0 +1,29 @@
+-- Skrur av output fra lasting av .psqlrc
+\set QUIET 1
+
+-- Penere formattering av output ved store resultat
+\x auto
+
+-- Skriver ut hvor lang tid hvert SQL statement tar
+\timing
+
+-- Fordi UTF-8 > alt annet :-)
+\encoding unicode
+
+-- Viser null-verdier som <null> for å unngå at man blander «tom streng» og «null»
+\pset null '<null>'
+
+-- Bruker unicode-tegn i stedet for ASCII for å tegne mer sexy tabell-rammer
+\pset linestyle unicode
+
+-- Tegner fulle rammer rundt resultatsett
+\pset border 2
+
+-- Bruk alltid less-style pager så det blir lettere å manøvrere i resultatsett
+\pset pager always
+
+-- Setter search-path til riktig schema så man slipper å prefixe alle tabellnavn i spørringer
+set search_path=signering,public
+
+-- Fjerner QUIET-flagget slik at man får output når man endrer psql-konfigurasjon runtime
+\unset QUIET
