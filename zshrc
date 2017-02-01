@@ -10,7 +10,8 @@ fi
 setopt PROMPT_SUBST
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.gem/ruby/2.3.0/bin::$PATH
+export PATH=/usr/local/Cellar/node/6.9.1/bin:$HOME/.gem/ruby/2.4.0/bin::$PATH
+export EDITOR=vim
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/fredrik/.oh-my-zsh
@@ -62,7 +63,7 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx brew brew-cask mvn)
+plugins=(git osx history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,4 +97,20 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias p=python
+alias tf=terraform
+alias pr="hub pull-request"
+alias zshedit="$EDITOR ~/.zshrc && source ~/.zshrc"
+alias zshrefresh="source ~/.zshrc"
 
+alias kill-all-screens="screen -list | grep Detached | cut -d. -f1 | awk '{print $1}' | xargs kill"
+alias mci="mvn clean install"
+alias mciskip="mvn clean install -DskipTests"
+alias mfdebug="mvnDebug exec:java -o -DskipTests -Plokalpostgres"
+alias mrelease="mvn release:prepare"
+alias mreleaseSkip="mvn release:prepare -Darguments="-DskipTests""
+
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
+
+ . `brew --prefix`/etc/profile.d/z.sh
+ source ~/local.sh
