@@ -1,5 +1,3 @@
-export USER=fredrik
-
 if [ -f $HOME/.digipostrc ]; then
     source $HOME/.digipostrc
 fi
@@ -10,11 +8,12 @@ fi
 setopt PROMPT_SUBST
 
 # If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/Cellar/node/6.9.1/bin:$HOME/.gem/ruby/2.4.0/bin::$PATH
+export PATH=`yarn global bin`:$HOME/.gem/ruby/2.4.0/bin::$PATH
 export EDITOR=vim
+export USER=fredrik
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/fredrik/.oh-my-zsh
+export ZSH=/Users/fredrikvaldmanis/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -63,7 +62,7 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx history-substring-search)
+plugins=(git osx mvn pass yarn history-substring-search docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,3 +113,4 @@ bindkey "^[[B" history-substring-search-down
 
  . `brew --prefix`/etc/profile.d/z.sh
  source ~/local.sh
+
