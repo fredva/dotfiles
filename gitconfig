@@ -8,6 +8,11 @@
     df = diff
     co = checkout
     ls = log --branches --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lg = log --pretty=\"%C(auto)%h %ar %Cblue%s%Creset%C(auto) %d %an\"
+    rank = shortlog -sn --no-merges
+    w = whatchanged --oneline
+    su = submodule update --recursive
+    diw = diff -w --ignore-space-at-eol
 
 [color]
     ui = true
@@ -18,7 +23,13 @@
 
 [diff]
     compactionHeuristic = true
+
 [core]
     editor = /usr/local/bin/vim
+
+[pager]
+    diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+    show = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+
 [fetch]
     prune = true
