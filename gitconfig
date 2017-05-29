@@ -13,6 +13,14 @@
     w = whatchanged --oneline
     su = submodule update --recursive
     diw = diff -w --ignore-space-at-eol
+    uncommit = reset --soft HEAD^
+
+    recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+    overview = log --all --oneline --no-merges
+    recap = log --all --oneline --no-merges --author=`git config --get user.email`
+    today = log --since=00:00:00 --all --no-merges --oneline --author=`git config --get user.email`
+
+    staged = diff --staged
 
 [color]
     ui = true
