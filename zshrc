@@ -1,3 +1,5 @@
+source ~/local.sh
+
 if [ -f $HOME/.digipostrc ]; then
     source $HOME/.digipostrc
 fi
@@ -5,20 +7,27 @@ if [ -f $HOME/.githubrc ]; then
     source $HOME/.githubrc
 fi
 
-setopt PROMPT_SUBST
+export EDITOR=vim
+export PATH=`yarn global bin`:$PATH
+
 
 # If you come from bash you might have to change your $PATH.
-export PATH=`yarn global bin`:$HOME/.gem/ruby/2.4.0/bin::$PATH
-export EDITOR=vim
-#export USER=fredrik
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/fredrikvaldmanis/.oh-my-zsh
+export ZSH=/Users/fredrik.morken/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="fredrik"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -62,7 +71,15 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx mvn pass yarn history-substring-search docker)
+plugins=(
+  git
+  osx
+  mvn
+  pass
+  yarn
+  history-substring-search
+  docker
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -95,6 +112,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+
 alias p=python
 alias tf=terraform
 alias pr="hub pull-request"
@@ -108,6 +126,8 @@ alias mfdebug="mvnDebug exec:java -o -DskipTests -Plokalpostgres"
 alias mrelease="mvn release:prepare"
 alias mreleaseSkip="mvn release:prepare -Darguments="-DskipTests""
 
+
+
 alias vær="curl http://wttr.in/oslo"
 
 alias merge-pdfs="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py"
@@ -115,8 +135,7 @@ alias merge-pdfs="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
- . `brew --prefix`/etc/profile.d/z.sh
- source ~/local.sh
+. `brew --prefix`/etc/profile.d/z.sh
 
 
 # tabtab source for serverless package
@@ -125,3 +144,6 @@ bindkey "^[[B" history-substring-search-down
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/fredrikvaldmanis/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/fredrikvaldmanis/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+
+
+
