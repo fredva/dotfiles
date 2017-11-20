@@ -10,7 +10,7 @@ setopt PROMPT_SUBST
 # If you come from bash you might have to change your $PATH.
 export PATH=`yarn global bin`:$HOME/.gem/ruby/2.4.0/bin::$PATH
 export EDITOR=vim
-export USER=fredrik
+#export USER=fredrik
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/fredrikvaldmanis/.oh-my-zsh
@@ -108,9 +108,20 @@ alias mfdebug="mvnDebug exec:java -o -DskipTests -Plokalpostgres"
 alias mrelease="mvn release:prepare"
 alias mreleaseSkip="mvn release:prepare -Darguments="-DskipTests""
 
+alias vær="curl http://wttr.in/oslo"
+
+alias merge-pdfs="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py"
+
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
  . `brew --prefix`/etc/profile.d/z.sh
  source ~/local.sh
 
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/fredrikvaldmanis/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/fredrikvaldmanis/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/fredrikvaldmanis/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/fredrikvaldmanis/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
