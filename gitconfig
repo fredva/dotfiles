@@ -34,6 +34,7 @@
 
 [core]
     editor = /usr/local/bin/vim
+    excludesfile = ~/.dotfiles/.gitignore
 
 [pager]
     diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
