@@ -23,7 +23,7 @@
 \pset pager always
 
 -- Setter search-path til riktig schema så man slipper å prefixe alle tabellnavn i spørringer
-set search_path=signering,public
+set search_path=site_config_service,project_service,public
 
 -- Fjerner QUIET-flagget slik at man får output når man endrer psql-konfigurasjon runtime
 \unset QUIET
