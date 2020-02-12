@@ -4,13 +4,13 @@ alias la='ls -a'
 alias lla="ll -a"
 alias ..='cd ..'
 alias gvim="mvim"
-alias p="python"
+alias p="python3"
 alias tf="terraform"
 alias grep="grep -i --color=auto"
 
 export PYTHONUSERBASE=~/local
 
-export PATH=~/local/bin:~/go/bin:/usr/local/opt/ruby/bin:$PATH
+export PATH=~/local/bin:~/go/bin:/usr/local/opt/ruby/bin:/usr/local/sbin:$PATH
 
 #export PS1="\[\033[0;31m\]➜ \[\033[01;34m\]\W> \[\033[00m\]"
 
@@ -54,11 +54,11 @@ bind "set show-all-if-ambiguous on"
 bind '"^[[A":history-search-backward'
 bind '"^[[B":history-search-forward'
 
-# Initialize thefuck
-eval $(thefuck --alias)
+alias restartaudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
 
 # Spacemaker stuff
 
 alias spacecurl='curl -H "Authorization: Bearer $(spacemaker-cli api login token)"'
 
 [[ -r ~/.bashrc ]] && . ~/.bashrc
+
