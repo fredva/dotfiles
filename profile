@@ -40,6 +40,7 @@ alias gp="git push"
 alias gco="git checkout"
 alias gba="git branch -a"
 alias gbd="git branch -d"
+alias grs="git reset HEAD . && git checkout ."
 alias pr="hub pull-request"
 
 __git_complete gco _git_checkout
@@ -70,3 +71,4 @@ alias spacecurl='curl -H "Authorization: Bearer $(spacemaker-cli api login token
 
 [[ -r ~/.bashrc ]] && . ~/.bashrc
 
+source ~/.i18ncredentials
