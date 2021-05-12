@@ -7,22 +7,11 @@ alias gvim="mvim"
 alias p="python3"
 alias tf="terraform"
 alias grep="grep -i --color=auto"
-
 export PYTHONUSERBASE=~/local
-
 export PATH=~/local/bin:~/go/bin:/usr/local/opt/ruby/bin:/usr/local/sbin:$PATH
 
 # Homebrew bash completion
-if type brew &>/dev/null; then
-  HOMEBREW_PREFIX="$(brew --prefix)"
-  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
-    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-  else
-    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
-      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
-    done
-  fi
-fi
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Git prompt
 source ~/.dotfiles/git-prompt.sh
@@ -67,8 +56,23 @@ alias restartaudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'
 
 # Spacemaker stuff
 
-alias spacecurl='curl -H "Authorization: Bearer $(spacemaker-cli api login token)"'
+alias scurl='curl -H "Authorization: Bearer $(spacemaker-cli api login token)"'
 
 [[ -r ~/.bashrc ]] && . ~/.bashrc
 
-source ~/.i18ncredentials
+source ~/.smcredentials
+
+export EDITOR=vim
+
+alias sm-mfa='eval $(~/local/bin/aws-mfa.sh fredrik)'
+
+export AWS_SDK_LOAD_CONFIG=1
+
+export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
+
+function getuser() {
+    user_id="${1#auth0|}"
+    scurl -s "https://app.spacemaker.ai/api/users/${user_id}" | jq
+}
