@@ -44,4 +44,9 @@
 [fetch]
     prune = true
 [pull]
-	rebase = true
+    rebase = true
+
+[includeIf "gitdir:~/spacemaker/**"]
+    path = ~/.dotfiles/git-config-autodesk
+
+

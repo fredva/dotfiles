@@ -1,0 +1,6 @@
+[user]
+name = Fredrik V. Mørken
+email = 96105013+fredrik-morken@users.noreply.github.com
+
+[core]
+sshCommand = "ssh -i ~/.ssh/id_rsa_adsk_github"
