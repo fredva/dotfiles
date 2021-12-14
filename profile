@@ -8,7 +8,7 @@ alias p="python3"
 alias tf="terraform"
 alias grep="grep -i --color=auto"
 export PYTHONUSERBASE=~/local
-export PATH=~/local/bin:~/go/bin:/usr/local/opt/ruby/bin:/usr/local/sbin:$PATH
+export PATH=~/local/bin:~/go/bin:/usr/local/opt/ruby/bin:/usr/local/sbin:/usr/local/opt/node@16/bin:$PATH
 export EDITOR=vim
 
 export PS1='\[\e[0;32m\]\W\[\e[0;33m\]$(__git_ps1 " (%s)") \[\e[0;31m\]➜\[\e[0m\] '
@@ -58,11 +58,8 @@ alias scurl='curl -H "Authorization: Bearer $(spacemaker-cli api login token)"'
 
 [[ -r ~/.bashrc ]] && . ~/.bashrc
 
-source ~/.smcredentials
 
-alias sm-mfa='eval $(~/local/bin/aws-mfa.sh fredrik)'
-
-export AWS_SDK_LOAD_CONFIG=1
+#export AWS_SDK_LOAD_CONFIG=1
 
 #export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
 #source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
@@ -72,3 +69,14 @@ function getuser() {
     user_id="${1#auth0|}"
     scurl -s "https://app.spacemaker.ai/api/users/${user_id}" | jq
 }
+
+# tabtab source for serverless package
+# uninstall by removing these lines
+[ -f ~/.config/tabtab/__tabtab.bash ] && . ~/.config/tabtab/__tabtab.bash || true
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+source ~/.smcredentials
