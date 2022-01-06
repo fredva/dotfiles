@@ -3,3 +3,4 @@
 venv
 .idea
 yarn-error.log
+.terraform.lock.hcl
