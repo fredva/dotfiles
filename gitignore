@@ -6,3 +6,6 @@ yarn-error.log
 .terraform.lock.hcl
 *.tfstate.backup
 .ignoreme
+.eslintcache
+.cursor
+.claude
