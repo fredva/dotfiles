@@ -35,10 +35,18 @@
 [core]
     excludesfile = ~/.dotfiles/gitignore
     ignorecase = false
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    light = true
 
 [pager]
-    diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
-    show = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+#    diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+#    show = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
 
 [fetch]
     prune = true
@@ -48,6 +56,5 @@
 [includeIf "gitdir:~/adsk/**"]
     path = ~/.dotfiles/git-config-autodesk
 
-
 [init]
-	defaultBranch = main
+    defaultBranch = main
