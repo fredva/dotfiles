@@ -7,3 +7,5 @@ alias vær="curl http://wttr.in/oslo"
 
 alias sli="spacemaker-cli"
 alias ws="webstorm"
+
+alias scurl='curl -H "Authorization: Bearer $(spacemaker-cli api login token)"'
