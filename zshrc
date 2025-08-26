@@ -1,4 +1,5 @@
 # If you come from bash you might have to change your $PATH.
+#zmodload zsh/zprof # uncomment to profile startup (also uncomment zprof at end of file)
 export PATH=~/local/bin:~/.local/bin:/opt/homebrew/bin:$PATH
 
 # Path to your Oh My Zsh installation.
@@ -23,7 +24,7 @@ ZSH_THEME="robbyrussell"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
@@ -62,19 +63,23 @@ ZSH_THEME="robbyrussell"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=~/.dotfiles
+ZSH_CUSTOM=~/.dotfiles/oh-my-zsh-custom
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws)
+plugins=(git git-prompt)
 
 # Set up completions for Homebrew
 eval "$(brew shellenv)"
 autoload -Uz compinit
-compinit
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+    compinit          # Full security check if dump is >24h old
+else
+    compinit -C       # Skip security check if dump is recent
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,8 +112,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export EDITOR=vim
+
 source ~/.adsksetup
 
 source /opt/homebrew/share/zsh-you-should-use/you-should-use.plugin.zsh
 
 eval $(thefuck --alias)
+export LESS="--RAW-CONTROL-CHARS --quit-if-one-screen --no-init"
+
+#zprof # uncomment to profile startup
