@@ -9,3 +9,4 @@ yarn-error.log
 .eslintcache
 .cursor
 .claude
+node_modules
