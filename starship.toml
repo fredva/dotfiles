@@ -1,5 +1,11 @@
 [nodejs]
 disabled = true
 
+[package]
+disabled = true
+
 [git_status]
 stashed = "📦"
+
+[jobs]
+disabled = true
