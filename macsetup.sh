@@ -12,7 +12,10 @@ defaults write com.apple.Accessibility KeyRepeatDelay -float 0.3
 defaults write com.apple.Accessibility KeyRepeatInterval -float 0.06
 
 # tap to clik trackpad
-defaults -currentHost write -globalDomain com.apple.mouse.tapBehavior -int 0
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+
+# custom screenshots dir
+defaults write com.apple.screencapture "location" -string "~/Screenshots"
 
 # Specify the preferences directory for iTerm2
 #defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iterm2"
