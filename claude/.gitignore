@@ -1,0 +1,20 @@
+# Claude Code - Exclude sensitive session data
+history.jsonl
+projects/
+debug/
+session-env/
+shell-snapshots/
+todos/
+
+# Exclude ephemeral caches
+stats-cache.json
+statsig/
+cache/
+.claude/
+
+# Only commit configuration
+!settings.local.json
+!plugins/known_marketplaces.json
+
+# Exclude marketplace content (embedded git repos)
+plugins/marketplaces/
