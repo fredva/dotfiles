@@ -5,6 +5,12 @@ debug/
 session-env/
 shell-snapshots/
 todos/
+file-history/
+plans/
+
+# Exclude personal config with account info
+.claude.json
+.claude.json.backup.*
 
 # Exclude ephemeral caches
 stats-cache.json
