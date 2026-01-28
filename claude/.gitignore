@@ -20,7 +20,9 @@ cache/
 
 # Only commit configuration
 !settings.local.json
-!plugins/known_marketplaces.json
+
+# Exclude marketplace config which has a timestamp that's being updated all the time
+plugins/known_marketplaces.json
 
 # Exclude marketplace content (embedded git repos)
 plugins/marketplaces/
