@@ -26,3 +26,9 @@ plugins/known_marketplaces.json
 
 # Exclude marketplace content (embedded git repos)
 plugins/marketplaces/
+
+# Stuff
+ide
+telemetry
+tasks
+policy-limits.json
