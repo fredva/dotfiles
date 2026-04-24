@@ -7,6 +7,9 @@ shell-snapshots/
 todos/
 file-history/
 plans/
+paste-cache/
+usage-data/
+sessions/
 
 # Exclude personal config with account info
 .claude.json
@@ -32,3 +35,6 @@ ide
 telemetry
 tasks
 policy-limits.json
+
+.credentials.json
+
