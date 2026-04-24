@@ -58,3 +58,5 @@
 
 [init]
     defaultBranch = main
+[credential "https://git.autodesk.com/iaas/homebrew-tap.git"]
+	helper = "!f() { echo \"password=${HOMEBREW_AUTODESK_GHE_TOKEN}\"; }; f"
