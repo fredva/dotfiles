@@ -17,6 +17,9 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 # custom screenshots dir
 defaults write com.apple.screencapture "location" -string "~/Screenshots"
 
+# fn keys as fn keys
+defaults write -g com.apple.keyboard.fnState -bool true
+
 # Specify the preferences directory for iTerm2
 #defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iterm2"
 
