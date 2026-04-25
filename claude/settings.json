@@ -1,64 +1,52 @@
 {
-    "env": {
-        "DISABLE_AUTOUPDATER": "1",
-        "CLAUDE_CODE_ATTRIBUTION_HEADER": "false"
-    },
-    "permissions": {
-        "defaultMode": "acceptEdits"
-    },
-    "model": "opusplan",
-    "statusLine": {
-        "type": "command",
-        "command": "npx -y ccstatusline@latest",
-        "padding": 0
-    },
-    "enabledPlugins": {
-        "atlassian@claude-plugins-official": true,
-        "figma@claude-plugins-official": false,
-        "forma-memory@forma-agent-toolkit": false,
-        "caveman@caveman": false,
-        "01-site-planning@skills-for-architects": false,
-        "kiln-setup@kiln-marketplace": true
-    },
-    "extraKnownMarketplaces": {
-        "forma-claude-plugins": {
-            "source": {
-                "source": "git",
-                "url": "git@github.com:spacemakerai/forma-claude-plugins.git"
-            }
-        },
-        "forma-agent-toolkit": {
-            "source": {
-                "source": "git",
-                "url": "git@github.com:spacemakerai/forma-design-agentic-toolkit.git"
-            }
-        },
-        "skills-for-architects": {
-            "source": {
-                "source": "github",
-                "repo": "AlpacaLabsLLC/skills-for-architects"
-            }
-        },
-        "kiln-marketplace": {
-            "source": {
-                "source": "git",
-                "url": "git@git.autodesk.com:iaas/kiln-marketplace"
-            }
-        }
-    },
-    "skipDangerousModePermissionPrompt": true,
-    "skipAutoPermissionPrompt": true,
-    "hooks": {
-        "PreToolUse": [
-            {
-                "matcher": "Bash",
-                "hooks": [
-                    {
-                        "type": "command",
-                        "command": "rtk hook claude"
-                    }
-                ]
-            }
+  "env": {
+    "DISABLE_AUTOUPDATER": "1",
+    "CLAUDE_CODE_ATTRIBUTION_HEADER": "false"
+  },
+  "permissions": {
+    "defaultMode": "acceptEdits"
+  },
+  "model": "opusplan",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
         ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y ccstatusline@latest",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "atlassian@claude-plugins-official": true,
+    "figma@claude-plugins-official": false,
+    "forma-memory@forma-agent-toolkit": true,
+    "kiln-setup@kiln-marketplace": true,
+    "operating-model@forma-agent-toolkit": true,
+    "productivity@forma-agent-toolkit": true
+  },
+  "extraKnownMarketplaces": {
+    "forma-agent-toolkit": {
+      "source": {
+        "source": "git",
+        "url": "git@github.com:spacemakerai/forma-design-agentic-toolkit.git"
+      }
+    },
+    "kiln-marketplace": {
+      "source": {
+        "source": "git",
+        "url": "git@git.autodesk.com:iaas/kiln-marketplace"
+      }
     }
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true
 }
