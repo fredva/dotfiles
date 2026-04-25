@@ -38,7 +38,6 @@ abbr --add p "python3"
 
 set -gx EDITOR vim
 set -gx PAGER less
-set -gx CLAUDE_CONFIG_DIR ~/.dotfiles/claude
 
 starship init fish | source
 
