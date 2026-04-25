@@ -26,6 +26,7 @@ cache/
 
 # Exclude marketplace config which has a timestamp that's being updated all the time
 plugins/known_marketplaces.json
+plugins/install-counts-cache.json
 
 # Exclude marketplace content (embedded git repos)
 plugins/marketplaces/
@@ -37,4 +38,4 @@ tasks
 policy-limits.json
 
 .credentials.json
-
+mcp-needs-auth-cache.json
